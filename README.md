@@ -1,24 +1,14 @@
 # Double-Big-Harvard-combo-large-arithmetic-shifts
 ## Memory Architecture
 a) Architecture: Harvard
-• Harvard Architecture is the digital computer architecture whose design is based on the concept
-where there are separate storage and separate buses (signal path) for instruction and
-data. It was basically developed to overcome the bottleneck of Von Neumann Architecture.
+• Harvard Architecture is the digital computer architecture whose design is based on the concept where there are separate storage and separate buses (signal path) for instruction and data. It was basically developed to overcome the bottleneck of Von Neumann Architecture.
 b) Instruction Memory Size: 1024 * 16
-Instruction Memory
-1024
-Rows
-16 Bits / Row
-• The instruction memory addresses are from 0 to 210 􀀀 1 (0 to 1023).
+• The instruction memory addresses are from 0 to 2^10 - 1 (0 to 1023).
 • Each memory block (row) contains 1 word which is 16 bits (2 bytes).
 • The instruction memory is word addressable.
 • The program instructions are stored in the instruction memory.
 c) Data Memory Size: 2048 * 8
-Data Memory
-2048
-Rows
-8 Bits / Row
-• The data memory addresses are from 0 to 211 􀀀 1 (0 to 2047).
+• The data memory addresses are from 0 to 2^11 - 1 (0 to 2047).
 • Each memory block (row) contains 1 word which is 8 bits (1 byte).
 • The data memory is word/byte addressable (1 word = 1 byte).
 • The data is stored in the data memory.
@@ -27,26 +17,16 @@ d) Registers: 66
 • 64 General-Purpose Registers (GPRS)
 – Names: R0 to R63
 • 1 Status Register
-7 6 5 4 3 2 1 0
-0 0 0 C V N S Z
 – Name: SREG
-– A status register, flag register, or condition code register (CCR) is a collection of status
-flag bits for a processor.
+– A status register, flag register, or condition code register (CCR) is a collection of status flag bits for a processor.
 – The status register has 5 flags updated after the execution of specific instructions:
-* Carry Flag (C): Indicates when an arithmetic carry or borrow has been generated out
-of the most significant bit position.
-· Check on 9th bit (bit 8) of UNSIGNED[VALUE1] OP UNSIGNED[VALUE2] ==
-1 or not.
+* Carry Flag (C): Indicates when an arithmetic carry or borrow has been generated out of the most significant bit position.
+· Check on 9th bit (bit 8) of UNSIGNED[VALUE1] OP UNSIGNED[VALUE2] == 1 or not.
 · Example: https://piazza.com/class/le8zgqxowmd6e7/post/17
-* Two’s Complement Overflow Flag (V): Indicates when the result of a signed number
-operation is too large, causing the high-order bit to overflow into the sign bit.
-· If 2 numbers are added, and they both have the same sign (both positive or both
-negative), then overflow occurs (V = 1) if and only if the result has the opposite
-sign. Overflow never occurs when adding operands with different signs.
-· If 2 numbers are subtracted, and their signs are different, then overflow occurs (V
-= 1) if and only if the result has the same sign as the subtrahend.
-· The difference between carry and overflow is explained in: https://piazza.com/
-class/le8zgqxowmd6e7/post/18
+* Two’s Complement Overflow Flag (V): Indicates when the result of a signed number operation is too large, causing the high-order bit to overflow into the sign bit.
+· If 2 numbers are added, and they both have the same sign (both positive or both negative), then overflow occurs (V = 1) if and only if the result has the opposite sign. Overflow never occurs when adding operands with different signs.
+· If 2 numbers are subtracted, and their signs are different, then overflow occurs (V = 1) if and only if the result has the same sign as the subtrahend.
+· The difference between carry and overflow is explained in: https://piazza.com/class/le8zgqxowmd6e7/post/18
 * Negative Flag (N): Indicates a negative result in an arithmetic or logic operation.
 · N = 1 if result is negative.
 · N = 0 if result is positive or zero.
@@ -55,15 +35,12 @@ class/le8zgqxowmd6e7/post/18
 * Zero Flag (Z): Indicates that the result of an arithmetic or logical operation was zero.
 · Z = 1 if result is 0.
 · Z = 0 if result is not 0.
-* Since all registers are 8 bits, and we are only using 5 bits in the Status Register for
-the flags, you are required to keep Bits7:5 cleared “0” at all times in the register.
+* Since all registers are 8 bits, and we are only using 5 bits in the Status Register for the flags, you are required to keep Bits7:5 cleared “0” at all times in the register.
 • 1 Program Counter
 – Name: PC
 – Type: Special-purpose register with a size of 16 bits (not 8 bits).
-– A program counter is a register in a computer processor that contains the address (location)
-of the instruction being executed at the current time.
-– As each instruction gets fetched, the program counter is incremented to point to the next
-instruction to be executed.
+– A program counter is a register in a computer processor that contains the address (location) of the instruction being executed at the current time.
+– As each instruction gets fetched, the program counter is incremented to point to the next instruction to be executed.
 
 ## Instruction Set Architecture
 a) Instruction Size: 16 bits
