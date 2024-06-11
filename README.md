@@ -117,19 +117,33 @@ b) Pipeline: 3 instructions (maximum) running in parallel
 – Imagine a program with 7 instructions:
 * 3 + (6  1) = 9 clock cycles
 – You are required to understand the pattern in the example and implement it.
-Package 4 Pipeline
+## Pipeline
 Instruction Fetch
+
 (IF)
+
 Instruction Decode
+
 (ID)
+
 Execute
+
 (EX)
+
 Cycle 1 Instruction 1
+
 Cycle 2 Instruction 2 Instruction 1 
+
 Cycle 3 Instruction 3 Instruction 2 Instruction 1
+
 Cycle 4 Instruction 4 Instruction 3 Instruction 2
+
 Cycle 5 Instruction 5 Instruction 4 Instruction 3
+
 Cycle 6 Instruction 6 Instruction 5 Instruction 4
+
 Cycle 7 Instruction 7 Instruction 6 Instruction 5
+
 Cycle 8 Instruction 7 Instruction 6
+
 Cycle 9 Instruction 7
